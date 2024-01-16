@@ -1,0 +1,20 @@
+{
+  "name": "iso28560-3",
+  "version": "0.1.0",
+  "description": "This tool converts ISO 28560-3 data from JSON to byte array and from byte array to JSON. ",
+  "main": "lib/ISO28560.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rfid",
+    "28560",
+    "28560-3",
+    "danish data model",
+    "rfid",
+    "tag"
+  ],
+  "type":"module",
+  "author": "Jan Kissig",
+  "license": "see license file"
+}

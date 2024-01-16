@@ -1,0 +1,267 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "RFID-REST",
+    "dateExported": "2024-01-16T09:54:34.317Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "039e7165-92d1-43b4-b1d5-b82a754b570b",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "reader infos all",
+            "url": "info/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-01-05T10:05:48.825Z",
+            "modified": "2024-01-05T10:06:43.339Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "870abdd4-ca37-442e-82fd-5f6620e961b8",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "reader infos single",
+            "url": "info/mr102@home",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-01-05T10:07:49.348Z",
+            "modified": "2024-01-05T10:08:11.250Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f41ef0dd-5415-46ab-b6c3-3a9db9ed3b61",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "rfOff",
+            "url": "rfOff/mr102@home",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-01-05T10:08:55.899Z",
+            "modified": "2024-01-05T10:09:12.851Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "71db72a3-fb4f-422a-8d3d-a2ce5b27c2b0",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "getReaderInfo",
+            "url": "getReaderInfo/mr102@home",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-01-05T10:10:01.888Z",
+            "modified": "2024-01-05T10:10:19.815Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "070a30a5-981b-47fa-8b6e-110070bd66f0",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "inventory",
+            "url": "inventory/mr102@home",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-01-05T10:11:32.092Z",
+            "modified": "2024-01-05T10:11:39.331Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "db826af5-599e-4ea9-b71a-ca1fdff3d991",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "tags",
+            "url": "tags/mr102@home?keepOpen&json",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-01-05T10:30:51.932Z",
+            "modified": "2024-01-16T09:15:35.304Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "out",
+                    "value": "json",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "keepOpen",
+                    "value": "",
+                    "isPath": false
+                },
+                {
+                    "name": "json",
+                    "value": "",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "e7e26f37-f0bc-4eab-a335-a8dca883141a",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "tag",
+            "url": "tag/mr102@home/e00401501f453d8f?out=json",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-01-05T10:33:13.287Z",
+            "modified": "2024-01-16T09:53:58.109Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "out",
+                    "value": "json",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "31664dc9-ecf5-4dd4-a993-994859ed20a7",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "tag",
+            "url": "tag/mr102@home/e0040100153b945a",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-01-05T10:34:06.874Z",
+            "modified": "2024-01-05T10:34:30.774Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "db8d309b-1f0f-47b1-8709-7b23f836d7e9",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "afi",
+            "url": "afi/mr102@home/e0040100153b945a/124",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-01-05T11:05:30.475Z",
+            "modified": "2024-01-05T11:12:56.869Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"afi\":123, \"UID\":\"e0040100153b945a\",\"comment\":\"if body is used afi is taken from body, if uid in path it is used\"}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5275ff46-517b-474e-8fb6-eb298c522d03",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "afi",
+            "url": "afi/mr102@home/e00401501f453d8f/",
+            "method": "GET",
+            "sortNum": 72500,
+            "created": "2024-01-16T09:49:47.842Z",
+            "modified": "2024-01-16T09:50:39.736Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9f3765b9-b1eb-4794-b6fa-e1d496592733",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "tag JSON",
+            "url": "tag/mr102@home/e0040100153b945a",
+            "method": "POST",
+            "sortNum": 75000,
+            "created": "2024-01-05T10:35:18.834Z",
+            "modified": "2024-01-16T09:25:35.102Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \"basicBlock\": {\n        \"contentParameter\": 1,\n        \"partNumber\": 1,\n        \"partsInItem\": 1,\n        \"typeOfUsage\": 1,      \n        \"primaryItemIdentifier\": \"foo\",\n        \"ISIL\": \"DE-526\"\n      }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "48ee43fc-5ed0-45cf-98a4-983ebabc5b9b",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "tag JSON long tag",
+            "url": "tag/mr102@home/e0040100153b945a",
+            "method": "POST",
+            "sortNum": 77500,
+            "created": "2024-01-05T11:04:30.690Z",
+            "modified": "2024-01-05T11:04:55.825Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"UID\": null,\n    \"AFI\": 7,\n    \"dataModel\" : \"ISO28560-3\",\n    \"model\": {\n      \"basicBlock\": {\n        \"contentParameter\": 1,\n        \"partNumber\": 1,\n        \"partsInItem\": 1,\n        \"typeOfUsage\": 1,      \n        \"primaryItemIdentifier\": \"1234\",\n        \"ISIL\": \"DE526\"\n      },\n      \"extensionBlocks\": [\n        {\n          \"dataBlockID\": 1,\n          \"mediaFormat\": 1,\n          \"ItemIdentifier\":null,\n          \"OwnerInstitution\": null\n        },\n        {\n          \"dataBlockID\": 2,\n          \"supplierIdentifier\": null,\n          \"productIdentifierLocal\": null,\n          \"OrderNumber\":null,\n          \"supplierInvoiceNumber\": null,\n          \"GS1ProductIdentifier\": null,\n          \"SupplyChainStage\": null\n        },\n        {\n          \"dataBlockID\": 3,\n          \"shelfLocation\": null,\n          \"MarcMediaFormat\": null,\n          \"OnixMediaFormat\": null,\n          \"subsidiaryOfAnOwnerInstitution\": null\n        },\n        {\n          \"dataBlockID\": 4,\n          \"title\": null\n        },\n        {\n          \"dataBlockID\": 5,\n          \"alternativeILLBorrowingInstitution\": null,\n          \"illBorrowingInstitution\": null,\n          \"illBorrowingTransactionNumber\": null\n        }\n      ]\n    }\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9c115ab3-cfa8-4102-9a73-5fca6bb84f3c",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "tag byte",
+            "url": "tag/mr102@home/",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-01-05T10:35:14.857Z",
+            "modified": "2024-01-16T09:30:39.104Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"UID\":\"e0040100153b945a\",\"data\":[17,1,1,102,111,111,98,97,114,0,0,0,0,0,0,0,0,0,0,136,175,68,69,53,50,54,0,0,0,0,0,0,0,0,0],\"AFI\":7}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a0a885d8-fad4-4b0d-97aa-ff345492d8ec",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "cpuReset",
+            "url": "cpuReset/mr102@home",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2024-01-05T11:15:00.584Z",
+            "modified": "2024-01-05T11:16:10.649Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c03b42b6-2832-4a2a-9ea7-9472033be940",
+            "colId": "c880512f-d85e-4ba9-8820-6b6be570c8bc",
+            "containerId": "",
+            "name": "systemReset",
+            "url": "systemReset/mr102@home",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2024-01-05T11:15:29.713Z",
+            "modified": "2024-01-05T11:15:49.828Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "http://localhost:4001/"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+[Unit]
+Description=node rfid deamon
+After=network.target
+
+[Service]
+Type=simple
+Environment=NODE_ENV=production PINO_LOG_LEVEL=info PATH=/home/jan/node/rfid-node
+ExecStart=/usr/bin/node ${PATH}/server/server.js
+ExecStop=/bin/kill -9 $MAINPID
+#Restart=always
+#RestartSec=10
+# Restart service after 10 seconds if node service crashes
+# log path mus be full path, variables like ${PATH} won't work
+StandardOutput=append:/pathtologs/logs/http-sip2.log
+StandardError=append:/pathtologs/logs/http-sip2-err.log
+User=username
+Group=username
+
+[Install]
+WantedBy=multi-user.target

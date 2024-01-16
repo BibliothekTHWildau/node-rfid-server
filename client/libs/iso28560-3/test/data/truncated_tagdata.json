@@ -1,0 +1,15 @@
+{
+  "UID": null,
+  "AFI": 7,
+  "model": {
+    "basicBlock": {
+      "contentParameter": 1,
+      "partNumber": 1,
+      "partsInItem": 1,
+      "typeOfUsage": 1,
+      
+      "primaryItemIdentifier": "1000000056",
+      "ISIL": "DK718500"
+    }
+  }
+}

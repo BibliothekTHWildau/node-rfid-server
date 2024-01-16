@@ -1,0 +1,36 @@
+{
+  "name": "node rfid server",
+  "version": "0.0.1",
+  "description": "Tool for working with Feig RFID readers. Especially HF reader MR102e.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "scripts": {
+    "run": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "keywords": [
+    "rfid",
+    "feig",
+    "mr102",
+    "REST",
+    "websocket"
+  ],
+  "author": "Jan Kissig",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "iso28560-3": "git+https://github.com/BibliothekTHWildau/ISO28560-3js",
+    "pino": "^8.14.1",
+    "pino-http": "^8.3.3",
+    "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "pino-pretty": "^10.0.1"
+  }
+}

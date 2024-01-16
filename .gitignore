@@ -1,0 +1,7 @@
+node_modules/
+logs/
+package-lock.json
+*.log
+config.js
+old/
+docs/*.pdf
