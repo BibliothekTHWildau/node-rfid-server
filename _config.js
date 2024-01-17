@@ -26,8 +26,18 @@ module.exports = {
       port: 10001,
       rxBufferSize: 280,  
       keepalive: 300000
+    },
+    {
+      id : "usb",
+      usb: {
+        vendorId: 2737,
+        productId: 2
+      },
+      ip: "usb",
+      port: 0,
+      rxBufferSize: 280, //MR102,  
+      keepalive: 300000
     }
-    
   ],
   testReader: [
     {

@@ -27,6 +27,7 @@
     "iso28560-3": "git+https://github.com/BibliothekTHWildau/ISO28560-3js",
     "pino": "^8.14.1",
     "pino-http": "^8.3.3",
+    "usb": "^2.11.0",
     "websocket": "^1.0.34"
   },
   "devDependencies": {
