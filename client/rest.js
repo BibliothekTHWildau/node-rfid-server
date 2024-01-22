@@ -19,14 +19,6 @@ function getReaders() {
   return doRequest(baseUrl + 'info/');
 }
 
-/*function getISO28560Items(id) {
-  return doRequest(baseUrl + 'reader/' + id + '/isoitems');
-}*/
-
-/*function writeISO28560tag(id,ISO28560tag){
-  return doRequest(baseUrl + 'reader/' + id + '/rawRequest',ISO28560tag);
-}*/
-
 function getTag(id, uid) {
   return doRequest(baseUrl + 'tag/' + id + '/' + uid);
 }
@@ -132,8 +124,7 @@ async function doRequest(url = '', data = null, method = 'GET') {
     //throw(new Error('Network response was not ok: ' + response.status + " " + response.statusText))
     let error = await response.json();
     return Promise.reject(error);
-    //return Promise.reject(new Error('Network response was not ok: ' + response.status + " " + response.statusText));
-    //return Promise.reject(new Error({ statusText:response.statusText,status:response.status }))
+    
   }
   try {
     return response.json();

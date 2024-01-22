@@ -28,7 +28,7 @@ sudo systemctl start node_rfid.service
 
 ## Test html client 
 
-go to client folder and run `npx http-server` to serve the index.html via local web server.
+go to `client` folder and run `npx http-server` to serve the index.html via local web server.
 
 ## Test script
 

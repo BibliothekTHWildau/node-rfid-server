@@ -16,7 +16,8 @@ config.reader.forEach(r => {
 var ISO28560_3 = {};
 
 async function loadESModules() {
-  ISO28560_3 = await import('../node_modules/iso28560-3/lib/ISO28560.js');
+  //ISO28560_3 = await import('../node_modules/iso28560-3/lib/ISO28560.js');
+  ISO28560_3 = await import('iso28560-3');
 }
 loadESModules();
 

@@ -3,6 +3,7 @@ const Reader = require("./index");
 const config = require('./config.js');
 
 const mainLogger = require('./logger')
+
 logger = mainLogger.child({ name: "test" })
 
 let r1 = config.reader.find(r => { return r.id == "mr102@home" });

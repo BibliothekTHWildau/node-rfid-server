@@ -1,38 +1,57 @@
 <body>
+  <h3>Settings</h3>
   <label for="restUrl">Rest URL: <input type="text" id="restUrl" value="http://localhost:4001" /></label>
-  <label for "websocketUrl">Websocket Url: <input type="text" id="websocketUrl"
+  <label for="websocketUrl">Websocket Url: <input type="text" id="websocketUrl"
       value="ws://localhost:4003" /></label><br>
-  <hr>
-  <button disabled id="getTags1" class="rfid ws">getTags via Websocket</button> vs.
-  <button disabled id="getTags2" class="rfid">getTags via REST</button><br>
+  <label for="readerSelect">Reader: <select id="readerSelect"></select></label>
 
-  <button disabled id="rfOff1" class="rfid ws">rfOff via Websocket</button> vs.
-  <button disabled id="rfOff2" class="rfid">rfOff via REST</button><br>
+  <h3>REST</h3>
+  <button id="getTags2" class="rfid">getTags</button><br>
+  <button id="rfOff2" class="rfid">rfOff</button><br>
+  <button id="inventory2" class="rfid">Inventory</button><br>
 
+  <h3>Websocket</h3>
+  <button disabled id="getTags1" class="rfid ws">getTags via Websocket</button><br> 
+  <button disabled id="rfOff1" class="rfid ws">rfOff via Websocket</button> 
+
+  <h3>Tags:</h3>
   Tags:<br> <textarea id="output" cols="80" rows="10"></textarea><br>
   ISO 28560-3: <br><textarea id="iso" cols="80" rows="20"></textarea>
 </body>
 
 <script type="module">
-  import { getTags, rfOff } from './rest.js';
+  import { inventory, getTags, rfOff, getReaders } from './rest.js';
   import ISO28560 from './libs/iso28560-3/lib/ISO28560.js';
   import { initWebsocket, getTagsWS, rfOffWS } from './websocket.js';
 
-  
+  // deafualt reader to work with
   var rfidSelectedReader = "mr102@home";
 
   let websocketServer = document.getElementById('websocketUrl').value;
-  initWebsocket(websocketServer,processTag);
+  initWebsocket(websocketServer, processTag);
   /*document.getElementById('websocketUrl').addEventListener('change', (ev) => {
     console.log("change", ev.target.value);
     websocketServer = ev.target.value;
   })*/
-  
+
 
   // rest buttons
   document.getElementById('getTags2').addEventListener('click', async () => {
     emptyOutput();
+
     getTags(rfidSelectedReader).then(response => {
+      for (let tag of response.tags) {
+        processTag(tag);
+      }
+    }).catch(error => {
+      console.log(error)
+    })
+  });
+
+  document.getElementById('inventory2').addEventListener('click', async () => {
+    emptyOutput();
+
+    inventory(rfidSelectedReader).then(response => {
       for (let tag of response.tags) {
         processTag(tag);
       }
@@ -62,10 +81,66 @@
   // on tag
   function processTag(tag) {
 
-    document.querySelector('#output').innerHTML += JSON.stringify(tag)
+    document.querySelector('#output').innerHTML += JSON.stringify(tag, null,2)
+    
+    if (!tag.data)
+      return;
+
     let model = new ISO28560(tag.data);
     document.querySelector('#iso').innerHTML += JSON.stringify(model, null, 2)
 
   }
+
+
+  async function buildReaderSelect(reload = false) {
+    
+    let select = document.querySelector("#readerSelect");
+    let availReaders;
+
+    // load available readers via REST
+    try {
+      let response = await getReaders();
+      availReaders = Object.keys(response);
+    } catch (error) {
+      alert("Error retrieving readers: " + error)
+    }
+
+    while (select.firstChild) {
+      select.removeChild(select.firstChild);
+    }
+
+    for (let readerId of availReaders) {
+      let option = document.createElement("option");
+      option.value = readerId;
+      option.text = readerId;
+      select.appendChild(option);
+    }
+
+    // reload button
+    let option = document.createElement('option');
+    option.text = "──────────";
+    option.disabled = true;
+    select.appendChild(option);
+    option = document.createElement('option');
+    option.value = "reload";
+    option.text = "Reload";
+
+    select.style.display = 'block';
+    select.value = rfidSelectedReader;
+
+    select.appendChild(option);
+
+
+  }
+
+  buildReaderSelect();
+
+  //
+  document.querySelector('#readerSelect').addEventListener('change', (val) => {
+    if (val.target.value === "reload") {
+      buildReaderSelect(true);
+    }
+    rfidSelectedReader = val.target.value;
+  });
 
 </script>
