@@ -2,7 +2,9 @@
 
 A small nodejs/express implementation to interact with RFID readers from Feig such as MR102 POE via a RESTlike http connection or Websocket.
 
-This work is based on https://github.com/joostkamphuisnl/feig-driver/blob/main/lib/reader.js but USB related code was removed to enact with IP readers only.
+This work is based on https://github.com/joostkamphuisnl/feig-driver/blob/main/lib/reader.js but extended to use either USB or IP readers.
+
+A frontend application suited to this project can be found here: https://github.com/BibliothekTHWildau/rfid-playground
 
 # Installation
 
@@ -35,6 +37,10 @@ go to `client` folder and run `npx http-server` to serve the index.html via loca
 node test.js
 
 Some reader methods are used in this file.
+
+## Vue3 based frontend app
+
+https://github.com/BibliothekTHWildau/rfid-playground
 
 
 # REST api
