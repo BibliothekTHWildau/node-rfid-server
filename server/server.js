@@ -577,7 +577,19 @@ wsServer.on('request', function (request) {
           connection.sendUTF(JSON.stringify(response));
           break;
         }
+        case 'bye': {
+          if (!readers[msg.readerId]) {
+            return;
+          }
 
+          try {
+            const rfOff = await (readers[msg.readerId]).rfOff(true);
+            logger.debug(rfOff);
+          } catch (err) {
+            logger.error(err);
+          }
+          break;
+        }
       }
 
 

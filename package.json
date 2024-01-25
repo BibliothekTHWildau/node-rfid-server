@@ -1,7 +1,7 @@
 {
   "name": "node rfid server",
   "version": "0.0.1",
-  "description": "Tool for working with Feig RFID readers. Especially HF reader MR102e.",
+  "description": "Server implementation for working with Feig RFID readers. Especially HF reader MR102e.",
   "main": "index.js",
   "directories": {
     "doc": "docs",
@@ -17,9 +17,14 @@
     "feig",
     "mr102",
     "REST",
-    "websocket"
+    "websocket",
+    "15693",
+    "28560",
+    "ISO 15693",
+    "ISO 28560"
   ],
-  "author": "Jan Kissig",
+  "contributors" : "Jan Kissig <jkissig@th-wildau.de> (https://th-wildau.de/bibliothek/)",
+  "author": "Joost Kamphuis <joost@twisted.nl> (https://www.twisted.nl)",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
