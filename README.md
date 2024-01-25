@@ -8,8 +8,10 @@ A frontend application suited to this project can be found here: https://github.
 
 # Installation
 
-npm install
+`npm install` to install packages.
 
+Copy `_config.js` to `config.js` and set params for readers. USB readers like Feig MR102-USB need may need some drivers to be installed first.
+ 
 # Run
 
 ## Server 
